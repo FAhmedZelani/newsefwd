@@ -57,7 +57,8 @@ ROOT_URLCONF = 'professional.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / 'templates'],
+        #'DIRS': ['BASE_DIR' / 'templates'],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -79,7 +80,8 @@ WSGI_APPLICATION = 'professional.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        #'NAME': BASE_DIR / 'db.sqlite3',
+        'NAME': [os.path.join(BASE_DIR, 'db.sqlite3')],
     }
 }
 
@@ -128,7 +130,8 @@ STATICFILES_DIRS = (
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 MEDIA_URL = '/media/'
-MEDIA_ROOT = BASE_DIR / 'media'
+#MEDIA_ROOT = BASE_DIR / 'media'
+MEDIA_ROOT = [os.path.join(BASE_DIR, 'media')],
 
 CLOUDINARY_STORAGE = {
   'CLOUD_NAME' : config('CLOUD_NAME'), 
