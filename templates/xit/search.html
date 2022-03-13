@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Result</title>
+</head>
+<body>
+    <h1>You searched {{ query }} </h1>
+    
+    {% if queryset1 %}
+    {% for data in queryset1 %}
+    <div>
+        <h4>{{ data.title }}</h4>
+        
+    </div>
+    {% endfor %}
+    {% endif %}
+    <hr>
+
+    {% if queryset2 %}
+    {% for data in queryset2 %}
+    <div>
+        <h4>{{ data.title }}</h4>
+        
+    </div>
+    {% endfor %}
+    {% endif %}
+    
+    <hr>
+
+    {% if queryset3 %}
+    {% for data in queryset3 %}
+    <div>
+        <h4>{{ data.title }}</h4>
+        
+    </div>
+    {% endfor %}
+    {% endif %}
+
+
+
+    
+</body>
+</html>
