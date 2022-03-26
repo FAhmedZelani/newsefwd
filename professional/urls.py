@@ -11,10 +11,6 @@ from django.urls import re_path
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('xit.urls', namespace='xit')),
-    path('album/', include('album.urls', namespace='album')),
-    path('bootstrap/', include('bootstrap.urls', namespace='bootstrap')),
-    path('carousel/', include('carousel.urls', namespace='carousel')),
-    
 ]
 
 urlpatterns.append(re_path(f'^{settings.MEDIA_URL.lstrip("/")}(?P<path>.*)$',

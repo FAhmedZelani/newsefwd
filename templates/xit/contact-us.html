@@ -5,7 +5,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>TenIT - Technology IT Solutions HTML Template</title>
+    <title>TenIT - Technology IT Solutions</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Favicon -->
@@ -77,26 +77,26 @@
 
                                                     <ul>
                                                         <li class="">
-                                                            <a href="{%url 'xit:index' %}"><span>Home</span></a>
+                                                            <a href="{% url 'xit:index' %}"><span>Home</span></a>
                                                             
                                                         </li>
                                                         <li class="">
-                                                            <a href="{%url 'xit:about-us' %}"><span>About us</span></a>
+                                                            <a href="{% url 'xit:about-us' %}"><span>About us</span></a>
                                                             
                                                               
                                                         </li>
                                                         <li class="">
-                                                            <a href="{%url 'xit:it-solutions' %}"><span>IT solutions</span></a>
+                                                            <a href="{% url 'xit:it-solutions' %}"><span>IT solutions</span></a>
                                                            
                                                         </li>
                                                         <li class="active">
-                                                            <a href="{%url 'xit:contact-us' %}"><span>Contact us</span></a>
+                                                            <a href="{% url 'xit:contact-us' %}"><span>Contact us</span></a>
                             
                                                             
                                                         </li>
 
                                                         <li>
-                                                            <a href="{%url 'xit:blog_index' %}"><span>Blog</span></a>
+                                                            <a href="{% url 'xit:blog_index' %}"><span>Blog</span></a>
                                                         </li>
                                                     </ul>
                                                 </nav>
@@ -177,29 +177,43 @@
                         <div class="col-lg-6 col-lg-6">
                             <div class="contact-form-wrap">
 
-                                <!-- <form id="contact-form" action="http://whizthemes.com/mail-php/jowel/mitech/php/mail.php" method="post"> -->
-                                <form id="contact-form" action="assets/php/mail.php" method="post">
-                                    <div class="contact-form">
-                                        <div class="contact-input">
-                                            <div class="contact-inner">
-                                                <input name="con_name" type="text" placeholder="Name *">
+                                <!-- form  -->
+                                    <form class="contact-form"  action="{% url 'xit:contact_form' %}" method="post">
+                                        {% csrf_token %}
+                                        
+                                        <div class="contact-form__two">
+                                            <div class="contact-input">
+                                                <div class="contact-inner">
+                                                    <input name="name" type="text" placeholder="Name *">
+                                                </div>
+                                                <div class="contact-inner">
+                                                    <input name="email" type="email" placeholder="Email *">
+                                                </div>
                                             </div>
-                                            <div class="contact-inner">
-                                                <input name="con_email" type="email" placeholder="Email *">
+                                            <div class="contact-select">
+                                                <div class="form-item contact-inner">
+                                                    <span class="inquiry">
+                                            <select id="Visiting" name="dept">
+                                                <option disabled="" selected="">Select Department to email</option>
+                                                <option value="Your inquiry about">Your inquiry about</option>
+                                                <option value="General Information Request">General Information Request</option>
+                                                <option value="Partner Relations">Partner Relations</option>
+                                                <option value="Careers">Careers</option>
+                                                <option value="Software Licencing">Software Licencing</option>
+                                            </select>
+    
+                                        </span>
+                                                </div>
+                                            </div>
+                                            <div class="contact-inner contact-message">
+                                                <textarea name="message" placeholder="Please describe what you need."></textarea>
+                                            </div>
+                                            <div class="comment-submit-btn">
+                                                <button class="ht-btn ht-btn-md" type="submit">Get a consultation</button>
+                                    
                                             </div>
                                         </div>
-                                        <div class="contact-inner">
-                                            <input name="con_subject" type="text" placeholder="Subject *">
-                                        </div>
-                                        <div class="contact-inner contact-message">
-                                            <textarea name="con_message" placeholder="Please describe what you need."></textarea>
-                                        </div>
-                                        <div class="submit-btn mt-20">
-                                            <button class="ht-btn ht-btn-md" type="submit">Send message</button>
-                                            <p class="form-messege"></p>
-                                        </div>
-                                    </div>
-                                </form>
+                                    </form>
                             </div>
                         </div>
                     </div>
@@ -223,9 +237,9 @@
                         </div>
                         <div class="col-lg-4 col-md-6">
                             <div class="conact-info-wrap mt-30">
-                                <h5 class="heading mb-20">New York</h5>
+                                <h5 class="heading mb-20">Dhaka</h5>
                                 <ul class="conact-info__list">
-                                    <li>58 Howard Street #14 New York</li>
+                                    <li>23/c kawran bazar Street Dhaka</li>
                                     <li><a href="#" class="hover-style-link text-color-primary">contact.newyork@TenIT.com</a></li>
                                     <li><a href="#" class="hover-style-link text-black font-weight--bold">(+47)1221 09878</a></li>
                                 </ul>
@@ -287,13 +301,13 @@
                     <div class="row footer-widget-wrapper">
                         <div class="col-lg-4 col-md-6 col-sm-6 footer-widget">
                             <div class="footer-widget__logo mb-30">
-                                <img src="{% static 'assets/images/logo/dark-logo.webp' %}" width="160" height="48" class="img-fluid" alt="">
+                                <img src="{% static 'assets/images/logo/logo-dark.webp' %}" width="160" height="48" class="img-fluid" alt="">
                             </div>
                             <ul class="footer-widget__list">
-                                <li>58 Howard Street #2 San Francisco, CA 941</li>
-                                <li><a href="mailto:contact@aeroland.com" class="hover-style-link">contact@aeroland.com</a></li>
-                                <li><a href="tel:123344556" class="hover-style-link text-black font-weight--bold">(+68)1221 09876</a></li>
-                                <li><a href="https://hasthemes.com/" class="hover-style-link text-color-primary">www.TenIT.xperts.com</a></li>
+                                <li>23/c kawran bazar Dhaka</li>
+                                <li><a href="" class="hover-style-link">contact@TenIT.com</a></li>
+                                <li><a href="" class="hover-style-link text-black font-weight--bold">(+880)1221 09876</a></li>
+                                <li><a href=" class="hover-style-link text-color-primary">www.TenIT.xperts.com</a></li>
                             </ul>
                         </div>
                         <div class="col-lg-2 col-md-4 col-sm-6 footer-widget">
@@ -308,7 +322,7 @@
                 <div class="container">
                     <div class="row align-items-center">
                         <div class="col-md-6 text-center text-md-start">
-                            <span class="copyright-text">&copy; 2022 TenIT. <a href="https://hasthemes.com/">All Rights Reserved.</a></span>
+                            <span class="copyright-text">&copy; 2022 TenIT. <a href="">All Rights Reserved.</a></span>
                         </div>
                         <div class="col-md-6 text-center text-md-end">
                             <ul class="list ht-social-networks solid-rounded-icon">
@@ -350,37 +364,7 @@
 
 
     </div>
-    <!-- Start Toolbar -->
-    <div class="demo-option-container">
-        <!-- Start Toolbar -->
-        <div class="aeroland__toolbar">
-            <div class="inner">
-                <a class="quick-option hint--bounce hint--left hint--black primary-color-hover-important" href="#" aria-label="Quick Options">
-                    <i class="fal fa-project-diagram"></i>
-                </a>
-                <a class="hint--bounce hint--left hint--black primary-color-hover-important" target="_blank" href="https://hasthemes.com/contact-us/" aria-label="Support Center">
-                    <i class="fal fa-life-ring"></i>
-                </a>
-                <a class="hint--bounce hint--left hint--black primary-color-hover-important" target="_blank" href="https://1.envato.market/c/417168/275988/4415?subId1=hastheme&subId2=mitech-preview&subId3=https%3A%2F%2Fthemeforest.net%2Fcart%2Fconfigure_before_adding%2F24906742%3Flicense%3Dregular%26size%3Dsource&u=https%3A%2F%2Fthemeforest.net%2Fcart%2Fconfigure_before_adding%2F24906742%3Flicense%3Dregular%26size%3Dsource" aria-label="Purchase Mitech">
-                    <i class="fal fa-shopping-cart"></i>
-                </a>
-            </div>
-        </div>
-        <!-- End Toolbar -->
-        <!-- Start Quick Link -->
-        <div class="demo-option-wrapper">
-            <div class="demo-panel-header">
-                <div class="title">
-                    <h6 class="heading mt-30">IT Solutions TenIT - Technology, IT Solutions & Services Html5 Template</h6>
-                </div>
-
-                
-            </div>
-           
-        </div>
-        <!-- End Quick Link -->
-    </div>
-    <!-- End Toolbar -->
+  
     <!--====================  scroll top ====================-->
     <a href="#" class="scroll-top" id="scroll-top">
         <i class="arrow-top fal fa-long-arrow-up"></i>

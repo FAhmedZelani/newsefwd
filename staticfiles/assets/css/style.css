@@ -11991,7 +11991,7 @@ ol {
 }
 
 .business-solution-form-wrap {
-  max-width: 400px;
+  max-width: 300px;
   margin-left: auto;
   background: #fff;
   -webkit-box-shadow: 0 2px 30px rgba(0, 0, 0, 0.1);
@@ -13636,8 +13636,8 @@ blockquote {
 .appointment-hero-bg {
   background-color: transparent;
   background-repeat: no-repeat;
-  background-image: url("new-banner.webp");
-  background-size: cover;
+  background-image: url("static/assets/images/banners/new2.jpg");
+  background-size: contain;
   background-position: 50% 10% 90% 50%;
 }
 

@@ -11991,13 +11991,13 @@ ol {
 }
 
 .business-solution-form-wrap {
-  max-width: 400px;
+  max-width: 500px;
   margin-left: auto;
   background: #fff;
   -webkit-box-shadow: 0 2px 30px rgba(0, 0, 0, 0.1);
           box-shadow: 0 2px 30px rgba(0, 0, 0, 0.1);
   padding: 42px 30px 51px;
-  border-radius: 5px;
+  border-radius: 10px;
   text-align: center;
 }
 
@@ -13637,14 +13637,14 @@ blockquote {
   background-color: transparent;
   background-repeat: no-repeat;
   background-image: url("new-banner.webp");
-  background-size: cover;
+  background-size: contain;
   background-position: 50% 10% 90% 50%;
 }
 
 @media only screen and (max-width: 767px) {
   .appointment-hero-text {
     text-align: center;
-    margin-bottom: 60px;
+    margin-bottom: 50px;
   }
 }
 
@@ -14234,10 +14234,12 @@ blockquote {
 =      40. About Us pages Css           =
 =======================================*/
 .about-us-bg {
-  background-image:url(contact-us-01-hero-bg.webp);
+  background-image:url("new2.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+  filter: blur(2px);
+
 }
 
 .banner-space {

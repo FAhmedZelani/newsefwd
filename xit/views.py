@@ -22,8 +22,6 @@ def index(request):
             appointment_form.save()
 
             return HttpResponseRedirect(request.path_info)
-
-
         else:
             appointment_form = AppointmentForm()
 
@@ -78,7 +76,7 @@ def about(request):
 
     return render(request, 'xit/about-us.html', context)
 
-def contact(request):
+def contactus(request):
     context = {
 
     }

@@ -1,3 +1,4 @@
+from datetime import datetime
 from django.db import models
 from django.urls import reverse
 
@@ -57,6 +58,7 @@ class Appointment(models.Model):
     name = models.CharField(max_length=50)
     email = models.CharField(max_length=50)
     dept = models.CharField(max_length=50)
+    datetime = models.DateTimeField(auto_now_add=False, auto_now = False, blank=True)
      
     def __str__(self):
         return self.name
@@ -65,6 +67,7 @@ class Contact(models.Model):
     name = models.CharField(max_length=50)
     email = models.CharField(max_length=50)
     dept = models.CharField(max_length=50)
+    services = models.TextField()
     message = models.TextField()
      
     def __str__(self):
